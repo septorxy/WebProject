@@ -14,3 +14,5 @@
         echo "You've never visited this page!";
 ?>
 
+//https://stackoverflow.com/questions/5074688/convert-minutes-into-seconds-in-php
+//https://stackoverflow.com/questions/5463549/subtract-time-in-php
