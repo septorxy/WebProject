@@ -1,6 +1,6 @@
 <?php
-    $expiry = 60*60*24*30+time();
-    setcookie('pervVisit', time());
+    $expiry = 60*60*24*30+time("h:i:sa");
+    setcookie('pervVisit', time("h:i:sa"));
 
     if(isset($_cookie['prevVisit'])){
         $visit = $_cookie['prevVisit'];
