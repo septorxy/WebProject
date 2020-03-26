@@ -7,10 +7,10 @@
 
     if(isset($_COOKIE["Last"])){
         echo "cookie set <br/>";
-        echo "Present time : " . $present . "<br/>";
         echo "Your last visit was: ";
         $min = (strtotime($present) - strtotime($_COOKIE["Last"]))/60;
         echo $min*60 . "seconds ago";
-    }
+    }else
+        echo "You've never visited this page!";
 ?>
 
