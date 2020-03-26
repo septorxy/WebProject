@@ -1,0 +1,10 @@
+<?php
+    $expiry = 60*60*24*30+time();
+    $cookie = setcookie('pervVisit', time());
+
+    if(isset($cookie['prevVisit'])){
+        $visit = $cookie['prevVisit'];
+        echo "You last visited this page on " .$visit;
+    }else
+        echo "You haven't visited this page before";
+?>
