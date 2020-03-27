@@ -30,13 +30,11 @@
          echo "Successful Entry"; //Q5
      } //till here
 
-
      echo "Your name is ".$name;
      <br>
      echo "Your favorite food is ".$food;
      <br>
      echo "Your ID Card is ".$UserID;
-
 
      ?>
 
