@@ -30,12 +30,21 @@
          echo "Successful Entry"; //Q5
      } //till here
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 570ec0f6c37f74e55892201671fc5095ce04b568
      echo "Your name is ".$name;
      <br>
      echo "Your favorite food is ".$food;
      <br>
      echo "Your ID Card is ".$UserID;
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> afdf7f412327467c9d5ff630cbcf42608a4f66d5
+>>>>>>> 570ec0f6c37f74e55892201671fc5095ce04b568
      ?>
 
 
