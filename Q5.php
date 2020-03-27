@@ -14,7 +14,7 @@
       <input type="text" name="person" placeholder="Enter Name">
       <input type="text" name="favFood" placeholder="Enter Favourite Food">
       <input type="text" name="ID" placeholder="Enter ID Number">
-      <br>
+      
       <input type="submit" name="submit">
     </form>
 
