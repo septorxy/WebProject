@@ -5,7 +5,7 @@
     <title>Displaying Data</title>
   </head>
 
-<!--Code in form and PHP code relating to GET method is copied from Q4-->
+<!--Code in form and PHP code relating to GET method is copied from Q4GET-->
 <!--Outputting Code is for Q5-->
 
   <body>
@@ -19,7 +19,7 @@
     </form>
 
      <?php
-     //Copied from Q4
+     //Copied from Q4GET
      if (isset($_GET['submit'])) {
          $name = $_GET['person'];
          $food = $_GET['favFood'];
@@ -35,11 +35,6 @@
          echo "<h2>Your ID Card is </h2>".$UserID."<br>";
       }
 
-    /* echo "<h2>Your name is </h2> ".$name."<br>";
-
-     echo "<h2>Your favorite food is</h2> ".$food."<br>";
-
-     echo "<h2>Your ID Card is </h2>".$UserID."<br>";*/
 
      ?>
 

@@ -6,12 +6,9 @@
 </head>
 <body>
 <form method="POST">
-    Enter Name
-    <input type="text" name="person">
-    Enter Favourite Food
-    <input type="text" name="favFood">
-    Enter your ID Number
-    <input type="text" name="ID">
+  <input type="text" name="person" placeholder="Enter Name">
+  <input type="text" name="favFood" placeholder="Enter Favourite Food">
+  <input type="text" name="ID" placeholder="Enter ID Number">
     <input type="submit" name="submit">
 </form>
 <?php
