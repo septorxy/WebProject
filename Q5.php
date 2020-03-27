@@ -30,11 +30,11 @@
          echo "<h1>Successful Entry<br></h1>"; //Q5
      } //till here
 
-     echo "<h2>Your name is </h2> ".$name "<br>";
+     echo "<h2>Your name is </h2> ".$name."<br>";
 
-     echo "<h2>Your favorite food is</h2> ".$food"<br>";
+     echo "<h2>Your favorite food is</h2> ".$food."<br>";
 
-     echo "<h2>Your ID Card is </h2>".$UserID "<br>";
+     echo "<h2>Your ID Card is </h2>".$UserID."<br>";
 
      ?>
 
