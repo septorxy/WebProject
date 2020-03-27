@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Displaying Data</title>
   </head>
 
 <!--Code in form and PHP code relating to GET method is copied from Q4-->
@@ -14,7 +14,7 @@
       <input type="text" name="person" placeholder="Enter Name">
       <input type="text" name="favFood" placeholder="Enter Favourite Food">
       <input type="text" name="ID" placeholder="Enter ID Number">
-      
+
       <input type="submit" name="submit">
     </form>
 
