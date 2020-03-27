@@ -27,13 +27,13 @@
          $food = $_GET['favFood'];
          $UserID = $_GET['ID'];
 
-         echo "Successful Entry"; //Q5
+         echo "<h1>Successful Entry<br></h1>"; //Q5
      } //till here
 
-     echo "Your name is ".$name;
-     <br>
-     echo "Your favorite food is ".$food;
-     <br>
+     echo "Your name is <br>".$name;
+
+     echo "Your favorite food is <br>".$food;
+
      echo "Your ID Card is ".$UserID;
 
      ?>
