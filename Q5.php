@@ -11,13 +11,11 @@
   <body>
 
     <form method="GET">
-        Enter Name
-        <input type="text" name="person">
-        Enter Favourite Food
-        <input type="text" name="favFood">
-        Enter your ID Number
-        <input type="text" name="ID">
-        <input type="submit" name="submit">
+      <input type="text" name="person" placeholder="Enter Name">
+      <input type="text" name="favFood" placeholder="Enter Favourite Food">
+      <input type="text" name="ID" placeholder="Enter ID Number">
+      <br>
+      <input type="submit" name="submit">
     </form>
 
      <?php
@@ -27,14 +25,21 @@
          $food = $_GET['favFood'];
          $UserID = $_GET['ID'];
 
-         echo "<h1>Successful Entry<br></h1>"; //Q5
-     } //till here
+        //Q5
+         echo "<h1>Successful Entry<br></h1>";
 
-     echo "<h2>Your name is </h2> ".$name."<br>";
+         echo "<h2>Your name is </h2> ".$name."<br>";
+
+         echo "<h2>Your favorite food is</h2> ".$food."<br>";
+
+         echo "<h2>Your ID Card is </h2>".$UserID."<br>";
+      }
+
+    /* echo "<h2>Your name is </h2> ".$name."<br>";
 
      echo "<h2>Your favorite food is</h2> ".$food."<br>";
 
-     echo "<h2>Your ID Card is </h2>".$UserID."<br>";
+     echo "<h2>Your ID Card is </h2>".$UserID."<br>";*/
 
      ?>
 
