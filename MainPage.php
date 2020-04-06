@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Ta' Randi</title>
-    <link href="This PC/Documents/Uni_Project/STYLE.CSS" rel = stylesheet type = text/CSS>
+    <link href="C:\Users\Win10 User\Documents\GitHub\Uni_Project\STYLE.CSS" rel = stylesheet type = text/CSS>
   </head>
 
   <body>
