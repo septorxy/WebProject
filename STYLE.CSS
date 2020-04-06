@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+body{
+  background-color: rgb(241, 229, 218);
+}
+
+h1{
+  text-align:center;
+}
+
+#left	{
+    border: 2px rgb(235, 216, 198);
+    width: 120px;
+		height: auto;
+		float: left;
+    font-family : Cambria;
+		font-size: 17.5px;
+		padding-left: 25px;
+			}
+
+#bottom {
+      background-color: rgb(235, 216, 198);
+      width: 1900px;
+      height: auto;
+      float:left;
+      font-family : Cambria;
+  		font-size: 11px;
+}

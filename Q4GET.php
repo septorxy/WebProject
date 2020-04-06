@@ -9,9 +9,10 @@
     <input type="text" name="person" placeholder="Enter Name">
     <input type="text" name="favFood" placeholder="Enter Favourite Food">
     <input type="text" name="ID" placeholder="Enter ID Number">
-    
+
     <input type="submit" name="submit">
 </form>
+
 <?php
 if (isset($_GET['submit'])) {
     $name = $_GET['person'];
