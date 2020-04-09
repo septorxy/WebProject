@@ -1,21 +1,42 @@
 <?php
+$statusMsg = '';
+$msgClass = '';
+
     if(isset($_POST['submit'])){
         $name = $_POST['name'];
         $subject = $_POST['subject'];
         $mailFrom = $_POST['mail'];
         $message = $_POST['message'];
 
-        $mailTo = 'ninamusumeci@hotmail.com' ;
-        $headers = "From: ".$mailFrom;
-        $txt = "You have received an e-mail from ".$name.".\n\n".$message;
+        if(!empty($email) && !empty($name) && !empty($subject) && !empty($message)){
 
-        mail($mailTo, $subject, $txt, $headers);
-        header("Location: index.php?MailSentSuccessfully!");
+            if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+                $statusMsg = 'Please enter your valid email.';
+                $msgClass = 'errordiv';
+            }else{
+                 $mailTo = 'ninamusumeci@hotmail.com' ;
+                $Subject = "From: ".$mailFrom. "Subject: ".$subject;
+                $txt = "You have received an e-mail from ".$name.".\n\n".$message;
 
-        if(mail($mailTo, $subject, $message, $headers)) {
-            echo "<p>Thank you for contacting us, $name. You will get a reply within 24 hours.</p>";
-        } else {
-            echo '<p>We are sorry but the email did not go through.</p>';
-        }
+                // Set content-type header for sending HTML email
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                // Additional headers
+                $headers .= 'From: '.$name.'<'.$email.'>'. "\r\n";
+
+                if(mail($mailTo,$Subject,$headers)){
+                    $statusMsg = 'Your contact request has been submitted successfully !';
+                    $msgClass = 'succdiv';
+                }else{
+                    $statusMsg = 'Your contact request submission failed, please try again.';
+                    $msgClass = 'errordiv';
+                }
+            }
+
+            }else{
+                $statusMsg = 'Please fill all the fields.';
+                $msgClass = 'errordiv';
+            }
     }
     ?>
