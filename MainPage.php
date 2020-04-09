@@ -24,7 +24,7 @@
 
 
 <div id="top_right" >
-         <a href="About Us.php" > About us </a>
+         <a href="AboutUs.php" > About us </a>
    		 <a href=""> Menu </a>
          <a href=""> Favourites </a>
    		 <a href=""> Contact Us </a>
