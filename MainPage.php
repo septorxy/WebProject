@@ -13,7 +13,7 @@
 
 
 <div id="top_left" >
-		<a href="Home Page.html">
+		<a href="MainPage.php">
 			<ul>
 			<li>Ta'Randi</li>
 			<li>Restaurant </li>
@@ -24,10 +24,10 @@
 
 
 <div id="top_right" >
-         <a href="../About Us/About Us.html" > About us </a>
-   		 <a href="Home Page.html"> Menu </a>
-         <a href="../Favourites/Favourites.html"> Favourites </a>
-   		 <a href="../Contact Us/Contact Us.html"> Contact Us </a>
+         <a href="About Us.php" > About us </a>
+   		 <a href=""> Menu </a>
+         <a href=""> Favourites </a>
+   		 <a href=""> Contact Us </a>
  </div>
 
 
