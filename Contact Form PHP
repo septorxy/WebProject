@@ -8,30 +8,24 @@ $msgClass = '';
         $mailFrom = $_POST['mail'];
         $message = $_POST['message'];
 
-        if(!empty($email) && !empty($name) && !empty($subject) && !empty($message)){
+        
 
-            if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
-                $statusMsg = 'Please enter your valid email.';
-                $msgClass = 'errordiv';
-            }else{
-                 $mailTo = 'ninamusumeci@hotmail.com' ;
-                $Subject = "From: ".$mailFrom. "Subject: ".$subject;
-                $txt = "You have received an e-mail from ".$name.".\n\n".$message;
+        if(!empty($mailFrom) && !empty($name) && !empty($subject) && !empty($message)){
 
-                // Set content-type header for sending HTML email
-                $headers = "MIME-Version: 1.0" . "\r\n";
-                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                $mailTo = 'tarandirestaurant1@gmail.com' ;
+                $Subject = 'From: '.$mailFrom. 'Subject: '.$subject;
+                $txt = 'You have received an e-mail \n\n'.$message;
 
                 // Additional headers
-                $headers .= 'From: '.$name.'<'.$email.'>'. "\r\n";
+                $headers = 'From: '.$name.'<'.$mailFrom.'>'. "\r\n";
 
-                if(mail($mailTo,$Subject,$headers)){
+                if(mail($mailTo,$Subject,$txt,$headers)){
                     $statusMsg = 'Your contact request has been submitted successfully !';
                     $msgClass = 'succdiv';
                 }else{
                     $statusMsg = 'Your contact request submission failed, please try again.';
                     $msgClass = 'errordiv';
-                }
+           
             }
 
             }else{
