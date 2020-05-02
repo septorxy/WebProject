@@ -7,7 +7,18 @@ form{
     margin-left: 450px;
 }
 
+body {
+    font-family:open Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    font-size:20px;
+    font-weight: normal;
+}
+
 p{
+    font-family: Arial, Helvetica, sans-serif, white;
+    text-align: center;
+}
+
+h1{
     font-family: Arial, Helvetica, sans-serif, white;
     padding-top: 16vh;
     margin-bottom: 10px;
