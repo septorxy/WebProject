@@ -1,0 +1,58 @@
+<?php include 'contactform.php'; ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="assets/css/MainStyles.css">
+</head>
+
+<body>
+
+    <div id="top_left">
+        <a href="index.php">
+            <ul>
+                <li>Ta'Randi</li>
+                <li>Restaurant </li>
+            </ul>
+        </a>
+    </div>
+
+
+
+    <div id="top_right">
+        <a href="AboutUs.php"> About us </a>
+        <a href="Menu.php"> Menu </a>
+        <a href=""> Favourites </a>
+        <a href="ContactForm.html"> Contact Us </a>
+    </div>
+
+    <br><br><br><br><br>
+    <main style='padding: 60px'>
+
+        <h1 style='text-align: center;'>Send E-mail</h1>
+
+        <?php
+    if(!empty($statusMsg)){ ?>
+            <p class="statusMsg 
+        <?php echo !empty($msgClass)?$msgClass:''; ?>">
+                <?php echo $statusMsg; ?>
+            </p>
+            <?php } ?>
+
+            <form id="contact-form" method="post" action="contactform.php"><br /><br />
+
+                <input type="text" name="name" placeholder="Name and Surname" required=""><br /><br />
+
+                <input type="text" name="email-address" placeholder="Your E-mail" required=""><br /><br />
+
+                <input type="text" name="email-subject" placeholder="Email Subject" required=""><br /><br />
+
+                <textarea name="message" placeholder="Message" required=""></textarea><br /><br />
+
+                <button type="submit" name="submit">SEND</button>
+
+            </form>
+    </main>
+</body>
