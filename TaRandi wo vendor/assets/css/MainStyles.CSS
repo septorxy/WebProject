@@ -1,4 +1,13 @@
         @charset "UTF-8";
+        html{
+            background-color:#2B1400;
+            
+        }
+
+        div{
+            background-color:#E8DCD1;
+        }
+
         body {
             font-family: open Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
             font-size: 20px;
@@ -96,12 +105,14 @@
             padding: 35px 60px;
             width: 1170px;
             height: auto;
+           
         }
         
         #bottom_sec {
             width: 1000px;
             height: auto;
             float: left;
+           
         }
         
         a {
