@@ -1,13 +1,4 @@
         @charset "UTF-8";
-        html{
-            background-color:#2B1400;
-            
-        }
-
-        div{
-            background-color:#E8DCD1;
-        }
-
         body {
             font-family: open Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
             font-size: 20px;
@@ -30,6 +21,13 @@
         .card:hover {
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         }
+        /*controlling the overall background and border*/
+        html{
+            widows: 1500px;
+            padding:20px 20px;
+            border:15px solid#2B1400;
+            background:#E8DCD1;
+         }
         
         .container_menu {
             padding: 2px 16px;
