@@ -1,0 +1,30 @@
+{% extends "layout.html" %} {% block content %}
+
+<head>
+    <title>Food Menu</title>
+</head>
+
+<div class="MenuSettings grid-container">
+    {% for menu in menuA %}
+    <div class="card grid-item">
+        <div class="container_menu">
+            <img src = './assets/images/{{ menu.MenuID }}.jpeg' class='centre' alt="I haven't had my picture taken yet but it will be up soon! Thank you for your patience :) ID: {{ menu.MenuID }}">
+            <h4><b>{{ menu.Name }}  </b></h4>
+            <p>
+                <table>
+                    <tr>
+                        <td>{% if menu.Price_Potential > 0 %}Small Portion{% endif %}</td>
+                        <td>{% if menu.Price_Potential > 0 %}| Large Portion{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td>€{{ menu.Price }}</td>
+                        <td>{% if menu.Price_Potential > 0 %}| €{{ menu.Price_Potential }} {% endif %}</td>
+                    </tr>
+                </table>
+                <br>
+                <a class="detailsMore" href="details.php?a={{ menu.MenuID }}">More Info</a>
+            </p>
+        </div>
+    </div> {% set preType = menu.Type %}
+    <br> {% endfor %}
+</div> {% endblock %}
