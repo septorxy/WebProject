@@ -1,17 +1,14 @@
-
 {% extends "layout.html" %}{% block content %}
-<?php include 'ContactForm.php'; ?>
     <main style='padding: 60px'>
 
         <h1 style='text-align: left;'>Send E-mail</h1>
 
-        <?php
-    if(!empty($statusMsg)){ ?>
-            <p class="statusMsg 
-        <?php echo !empty($msgClass)?$msgClass:''; ?>">
-                <?php echo $statusMsg; ?>
+        
+    {% if statusMsg is defined%}
+            <p class="statusMsg">
+                {{statusMsg}}
             </p>
-            <?php } ?>
+        {% endif%}
 
             <form id="contact-form" method="post" action="contactform.php"><br /><br />
 

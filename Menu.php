@@ -1,6 +1,6 @@
 <?php 
     error_reporting(0);
-    require_once __DIR__.'/bootstrap.php';
+    require_once __DIR__ . '/header.php';
     require_once __DIR__.'/includes/dbhINC.php';
     // List loaded from store
     $sql = "SELECT *  FROM `menu` ORDER BY `Type`  ASC";
@@ -9,8 +9,6 @@
     if (!$result) { die("Query Failed."); }
 
     $menu = array();
-    
-    echo $twig->render('header.html');
     
     //We are asuming thta for a new type of food to be added would mean a whole rebranding of the restaurant it is sem-hard coded
     //However if we want to make it fully dynamic we just need to display row['Type'] as a header and use a search funtion to display dynamically

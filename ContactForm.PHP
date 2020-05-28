@@ -1,8 +1,9 @@
 <?php
 //error_reporting(0);
-require_once __DIR__ . '/bootstrap.php';
-echo $twig->render('header.html');
-echo $twig->render('ContactForm.HTML');
+require_once _DIR_ . '/bootstrap.php';
+include 'header.php';
+echo !empty($msgClass)?$msgClass:'';
+
 $statusMsg = '';
 $msgClass = '';
 
@@ -16,19 +17,19 @@ if (isset($_POST['submit'])) {
         //email headers with the sender's information
         $emailTo = 'tarandirestaurant1@gmail.com';
         $Subject = 'From: ' . $emailFrom . 'Subject: ' . $subject;
-        $txt = 'You have received an e-mail \n\n' . $message;
+        $txt = "You have received an e-mail \n\n" . $message;
 
         // Additional headers
         $headers = 'From: ' . $name . '<' . $emailFrom . '>' . "\r\n";
 
         if (mail($emailTo, $Subject, $txt, $headers)) {
-            echo "here";
+           
             //if all the required information was entered
             $statusMsg = 'Your contact request has been submitted successfully !';
             $msgClass = 'succdiv';
         } else {
             //if a problem was encountered
-            echo "not here";
+          
             $statusMsg = 'Your contact request submission failed, please try again.';
             $msgClass = 'errordiv';
         }
@@ -38,3 +39,5 @@ if (isset($_POST['submit'])) {
         $msgClass = 'errordiv';
     }
 }
+echo $twig->render('ContactForm.html', ['statusMsg' => $statusMsg]);
+?>
