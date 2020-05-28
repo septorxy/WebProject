@@ -22,6 +22,10 @@
         
         //Display
         echo "<h1>Favourites Menu</h1>";
+        echo "<form  method='post'>
+        <input type='text' name='email' placeholder='Your E-mail' required=''>
+        <button type='submit' name='submit'>Send Favourites?</button>
+        </form>";
         echo $twig->render('Menu.html', array('menuA' => $favMenu));
         echo "<title>Favourites</title>";
     }else{
@@ -33,5 +37,11 @@
         echo $twig->render('layout.html');
         echo "<title>Favourites</title>";
         echo "<div id='middle_sec'>You have not selected any favourites yet! Go to our Menu to add some :)</div>";
+    }
+
+
+
+    if (isset($_POST['submit'])) {
+        //Code?
     }
 ?>
