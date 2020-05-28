@@ -23,8 +23,8 @@
         //Display
         echo "<h1>Favourites Menu</h1>";
         echo "<form  method='post'>
-        <input type='text' name='email' placeholder='Your E-mail' required=''>
-        <button type='submit' name='submit'>Send Favourites?</button>
+        <input type='text' name='email' placeholder='Your E-mail' required="">
+        <button type='submit' name='submit'>Send Favourites</button>
         </form>";
         echo $twig->render('Menu.html', array('menuA' => $favMenu));
         echo "<title>Favourites</title>";
@@ -39,9 +39,37 @@
         echo "<div id='middle_sec'>You have not selected any favourites yet! Go to our Menu to add some :)</div>";
     }
 
-
-
     if (isset($_POST['submit'])) {
-        //Code?
-    }
+        $subject = 'Your Favourites';
+        $emailTo = $_POST['email'];
+    
+        if (!empty($emailTo)) {
+            $iterator = 1;
+            foreach ($data as $value){
+                $sql = "SELECT * FROM `menu` WHERE `MenuID` = $value";
+                $result = mysqli_query($conn, $sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                        $name[] = $row['Name'];
+                        $ingredients[] = $row['Ingredients'];
+
+                        $message = $message.$iterator++. <br>.$name.<br>.$ingredients.<br><br>;
+                }
+             }
+
+            $txt = 'These are your favourites from Ta Randi Restaurant: '.<br>. $message;
+    
+            if (mail($emailTo, $Subject, $txt)) {
+                $statusMsg = 'Your Favourites have been succesfully sent!';
+                $msgClass = 'succdiv';
+            } else {
+                $statusMsg = 'Something went wrong, please try again.';
+                $msgClass = 'errordiv';
+            }
+
+        } else {
+            $statusMsg = 'Please fill all the fields.';
+            $msgClass = 'errordiv';
+        }
 ?>
+
+
