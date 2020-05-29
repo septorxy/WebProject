@@ -1,6 +1,7 @@
 <?php
     error_reporting(0);
     require_once __DIR__ . '/header.php';
+    require_once __DIR__ . '/footer.php';
     require_once __DIR__ . '/includes/dbhINC.php';
     
     //Looking for cookies and putting them in an array

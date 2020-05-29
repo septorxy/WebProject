@@ -1,7 +1,8 @@
 <?php
 //error_reporting(0);
-require_once _DIR_ . '/bootstrap.php';
-include 'header.php';
+require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/footer.php';
 echo !empty($msgClass)?$msgClass:'';
 
 $statusMsg = '';

@@ -1,6 +1,7 @@
 <?php 
     error_reporting(0);
     require_once __DIR__ . '/header.php';
+    require_once __DIR__ . '/footer.php';
     require_once __DIR__.'/includes/dbhINC.php';
     // List loaded from store
     $sql = "SELECT *  FROM `menu` ORDER BY `Type`  ASC";
