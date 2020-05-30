@@ -1,16 +1,17 @@
-
+<script>
+  function Hide() {
+    var x = document.getElementById("GDPR");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+</script>
 <div class="footer" id="GDPR">
-    <script>
-        function Hide() {
-          var x = document.getElementById("GDPR");
-          if (x.style.display === "none") {
-            x.style.display = "block";
-          } else {
-            x.style.display = "none";
-          }
-        }
-    </script>
-    <p style="text-align: center;">For us to provide the best user experience and more functionality to our website we need to use cookies<br>
-    By using this website you are consenting to the <a href="CookiesInfo.php" style="padding-left: 0px; color: blue;">use of cookies.</a>
-    <form  method='post'><button name='CookiesUnderstand' onclick="Hide()">I understand</button></form></p>
+  <ul style="padding: 10px">
+    <li style='float: left !important;'>For us to provide the best user experience and more functionality to our website we need to use cookies<br>
+    By using this website you are consenting to the <a href="CookiesInfo.php" style="padding-left: 0px; color: blue;">use of cookies.</a></li>
+    <li style='float: right !important; ' ><form  method='post' class = 'right'><button name='CookiesUnderstand' onclick="Hide()">I understand</button></form></li>
+  </ul>
 </div>
