@@ -97,7 +97,7 @@ textarea{
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto;
     grid-gap: 10px;
 }
 
@@ -179,5 +179,12 @@ ul {
     padding: 14px 16px;
     text-decoration: none;
   }
-  
-  
+
+  .footer {
+    border-top: black;
+    background-color: blanchedalmond;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
