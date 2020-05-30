@@ -58,6 +58,7 @@ if (isset($_POST['submit'])) {
         $new = $data;
     }
     //Cookies being set
+    sort($new);
     setcookie('Fav', serialize($new), time() + (86400 * 30));
     header("Refresh:0");
 }
