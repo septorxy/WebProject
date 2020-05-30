@@ -3,7 +3,6 @@
 <head>
     <title>Food Menu</title>
 </head>
-<div class = 'MenuSettings'><br><h1 style='text-align: center'>Menu</h1>
 {% for menu in menuA %}
 {% if menu.Type != preType %}</div><h2>{{ menu.Type }}</h2><div class="MenuSettings grid-container"> {% endif %}
     <div class="card grid-item">

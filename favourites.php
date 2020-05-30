@@ -23,7 +23,7 @@
         echo "<h1>Favourites Menu</h1>";
         echo "<form  method='post'>
         <input type='text' name='email' placeholder='Your E-mail' required=''>
-        <button type='submit' name='submit'>Send Favourites?</button>
+        <button type='submit' name='submit'>Send Favourites</button>
         </form>";
         echo $twig->render('Menu.html', array('menuA' => $favMenu));
         echo "<title>Favourites</title>";

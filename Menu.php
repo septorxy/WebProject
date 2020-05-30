@@ -15,5 +15,6 @@
         $menu[] = $row;
     }
 
+    echo "<div class = 'MenuSettings'><br><h1 style='text-align: center'>Menu</h1>";
     echo $twig->render('Menu.html', array('menuA' => $menu));
 ?>
