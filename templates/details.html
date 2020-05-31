@@ -1,5 +1,5 @@
-{% extends "layout.html" %} {% block content %} {% for menu in menuA%}
-
+{% extends "layout.html" %} {% block content %} {% for menu in menuA %}
+<img src = './assets/images/{{ menu.MenuID }}.jpeg' class='centre' alt="I haven't had my picture taken yet but it will be up soon! Thank you for your patience :) ID: {{ menu.MenuID }}">
 <div class='detailsPage' style="text-align:center">
     
     <h2>{{menu.Name}}</h2>

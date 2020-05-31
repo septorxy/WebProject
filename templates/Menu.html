@@ -3,8 +3,9 @@
 <head>
     <title>Food Menu</title>
 </head>
+{% if MenuSet is defined %} <div class = 'MenuSettings'><br><h1 style='text-align: center'>Menu</h1> {% endif %}
 {% for menu in menuA %}
-{% if menu.Type != preType %}</div><h2>{{ menu.Type }}</h2><div class="MenuSettings grid-container"> {% endif %}
+{% if (menu.Type != preType) %}</div> {% if MenuSet is defined %}<h2>{{ menu.Type }}</h2>{% endif %}<div class="MenuSettings grid-container" >  {% endif %}
     <div class="card grid-item">
         <div class="container_menu">
             <img src = './assets/images/{{ menu.MenuID }}.jpeg' class='centre' alt="I haven't had my picture taken yet but it will be up soon! Thank you for your patience :) ID: {{ menu.MenuID }}">
@@ -12,12 +13,12 @@
             <p>
                 <table>
                     <tr>
-                        <td>{% if menu.Price_Potential > 0 %}Small Portion{% endif %}</td>
-                        <td>{% if menu.Price_Potential > 0 %}| Large Portion{% endif %}</td>
+                        <td>{% if menu.Price_Potential != null %}Small Portion{% endif %}</td>
+                        <td>{% if menu.Price_Potential != null %}| Large Portion{% endif %}</td>
                     </tr>
                     <tr>
                         <td>€{{ menu.Price }}</td>
-                        <td>{% if menu.Price_Potential > 0 %}| €{{ menu.Price_Potential }} {% endif %}</td>
+                        <td>{% if menu.Price_Potential != null %}| €{{ menu.Price_Potential }} {% endif %}</td>
                     </tr>
                 </table>
                 <br>

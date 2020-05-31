@@ -13,6 +13,10 @@ if ($stmt = mysqli_prepare($conn, "SELECT *  FROM `menu` WHERE `MenuID` = ? ORDE
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     while ($row = mysqli_fetch_assoc($result)){
+        $row['Price'] = number_format($row['Price'], 2, '.', '');
+        if($row['Price_Potential'] != null){
+            $row['Price_Potential'] = number_format($row['Price_Potential'], 2, '.', '');
+        }
         $menu[] = $row;
     }
     mysqli_stmt_close($stmt);

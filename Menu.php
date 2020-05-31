@@ -12,9 +12,14 @@
     $menu = array();
 
     while($row = mysqli_fetch_assoc($result)){
+        $row['Price'] = number_format($row['Price'], 2, '.', '');
+        if($row['Price_Potential'] != null){
+            $row['Price_Potential'] = number_format($row['Price_Potential'], 2, '.', '');
+        }
         $menu[] = $row;
     }
 
-    echo "<div class = 'MenuSettings'><br><h1 style='text-align: center'>Menu</h1>";
-    echo $twig->render('Menu.html', array('menuA' => $menu));
+    $MenuSet = "Defined";
+
+    echo $twig->render('Menu.html', ['menuA' => $menu, 'MenuSet' => $MenuSet]);
 ?>
