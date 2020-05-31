@@ -1,7 +1,8 @@
 <?php
 error_reporting(0);
 require_once __DIR__ . '/bootstrap.php';
-
+require_once __DIR__ . '/footer.php';
+require_once __DIR__ . '/header.php';
 // List loaded from store
 require_once __DIR__ . '/includes/dbhINC.php';
 // List loaded from store
@@ -22,7 +23,6 @@ $found = -1;
 //Displaying page if ID found otherwise displaying a 404 page
 //Here it is also detecting if the item is part of favorites
 if (count($menu) < 1) {
-    echo $twig->render('header.html');
     die($twig->render('404.html'));
 } else {
     if(isset($_COOKIE['Fav'])){
@@ -38,7 +38,6 @@ if (count($menu) < 1) {
         $value = "Add to";
     }
     //Render view
-    echo $twig->render('header.html');
     echo $twig->render('details.html', ['menuA' => $menu, 'value' => $value]);
 }
 
@@ -59,6 +58,7 @@ if (isset($_POST['submit'])) {
         $new = $data;
     }
     //Cookies being set
+    sort($new);
     setcookie('Fav', serialize($new), time() + (86400 * 30));
     header("Refresh:0");
 }

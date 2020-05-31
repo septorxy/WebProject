@@ -3,9 +3,8 @@
 <head>
     <title>Food Menu</title>
 </head>
-
-<div class="MenuSettings grid-container">
-    {% for menu in menuA %}
+{% for menu in menuA %}
+{% if menu.Type != preType %}</div><h2>{{ menu.Type }}</h2><div class="MenuSettings grid-container"> {% endif %}
     <div class="card grid-item">
         <div class="container_menu">
             <img src = './assets/images/{{ menu.MenuID }}.jpeg' class='centre' alt="I haven't had my picture taken yet but it will be up soon! Thank you for your patience :) ID: {{ menu.MenuID }}">
@@ -26,5 +25,5 @@
             </p>
         </div>
     </div> {% set preType = menu.Type %}
-    <br> {% endfor %}
+ {% endfor %}
 </div> {% endblock %}

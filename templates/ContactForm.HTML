@@ -1,0 +1,27 @@
+{% extends "layout.html" %}{% block content %}
+    <main style='padding: 60px'>
+
+        <h1 style='text-align: left;'>Send E-mail</h1>
+
+        
+    {% if statusMsg is defined%}
+            <p class="statusMsg">
+                {{statusMsg}}
+            </p>
+        {% endif%}
+
+            <form id="contact-form" method="post" action="contactform.php"><br /><br />
+
+                <input type="text" name="name" placeholder="Name and Surname" required=""><br /><br />
+
+                <input type="text" name="email-address" placeholder="Your E-mail" required=""><br /><br />
+
+                <input type="text" name="email-subject" placeholder="Email Subject" required=""><br /><br />
+
+                <textarea name="message" placeholder="Message" required=""></textarea><br /><br />
+
+                <button type="submit" name="submit">SEND</button>
+
+            </form>
+    </main>
+{% endblock %}

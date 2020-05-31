@@ -1,9 +1,8 @@
 <?php
     error_reporting(0);
-    require_once __DIR__ . '/bootstrap.php';
+    require_once __DIR__ . '/header.php';
+    require_once __DIR__ . '/footer.php';
     require_once __DIR__ . '/includes/dbhINC.php';
-
-    echo $twig->render('header.html');
     
     //Looking for cookies and putting them in an array
     if(isset($_COOKIE['Fav']) && $_COOKIE['Fav']!=null){
@@ -23,7 +22,7 @@
         //Display
         echo "<h1>Favourites Menu</h1>";
         echo "<form  method='post'>
-        <input type='text' name='email' placeholder='Your E-mail' required="">
+        <input type='text' name='email' placeholder='Your E-mail' required=''>
         <button type='submit' name='submit'>Send Favourites</button>
         </form>";
         echo $twig->render('Menu.html', array('menuA' => $favMenu));
@@ -39,6 +38,8 @@
         echo "<div id='middle_sec'>You have not selected any favourites yet! Go to our Menu to add some :)</div>";
     }
 
+
+
     if (isset($_POST['submit'])) {
         $subject = 'Your Favourites';
         $emailTo = $_POST['email'];
@@ -52,24 +53,20 @@
                         $name[] = $row['Name'];
                         $ingredients[] = $row['Ingredients'];
 
-                        $message = $message.$iterator++. <br>.$name.<br>.$ingredients.<br><br>;
+                        $message = $message.$iterator++."<br>".$name."<br>".$ingredients."<br><br>";
                 }
              }
 
-            $txt = 'These are your favourites from Ta Randi Restaurant: '.<br>. $message;
+            $txt = 'These are your favourites from Ta Randi Restaurant: <br>'. $message;
     
             if (mail($emailTo, $Subject, $txt)) {
-                $statusMsg = 'Your Favourites have been succesfully sent!';
-                $msgClass = 'succdiv';
+                echo 'Your Favourites have been succesfully sent!';
             } else {
-                $statusMsg = 'Something went wrong, please try again.';
-                $msgClass = 'errordiv';
+                echo 'Something went wrong, please try again.';
             }
 
         } else {
-            $statusMsg = 'Please fill all the fields.';
-            $msgClass = 'errordiv';
+            echo 'Please fill all the fields.';
         }
-?>
-
-
+    }
+?>  
