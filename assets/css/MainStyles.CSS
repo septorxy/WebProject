@@ -14,6 +14,25 @@ body {
     background-image: url('../images/Background.jpeg') !important;
 }
 
+
+@media only screen and (max-width: 1000px) {
+    .card {
+        box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.8);
+        transition: 2s;
+        width: 100%;
+        /* You can also specify min/max widths */
+        min-width: 130px;
+        max-width: 400px;
+        border-radius: 15px;
+        background-image: url('../images/Background.jpeg') !important;
+    }
+
+    .MenuSettings {
+        padding: 00px;
+        font-style: oblique;
+    }
+  }
+
 .split {
     height: 20%;
     width: 90%;
