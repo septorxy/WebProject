@@ -5,16 +5,42 @@
 </head>
 
 <body>
-    <div id="middle_sec">
-        <br> blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla
-        blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla
+    <div id="middle_sec" style = "max-width:1000px">
+      <img class= "images" src = "./assets/images/homepage1.jpg"  height = "1000px" alt = "">
+      <img class= "images" src = "./assets/images/homepage2.jpg" width = "1000px" height = "850px"  alt="">
+      <img class= "images" src = "./assets/images/homepage3.jpg" width = "850" height = "700" alt="">
+      <img class= "images" src = "./assets/images/homepage4.jpg" width = "850" height = "700" alt="">
+      <img class= "images" src = "./assets/images/homepage5.jpg" width = "850" height = "700" alt="">
+      <img class= "images" src = "./assets/images/homepage6.jpg" width = "850" height = "700" alt="">
+      <img class= "images" src = "./assets/images/homepage7.jpg" width = "850" height = "700" alt="">
     </div>
 
+    <script>
+      var myIndex = 0;
+      slideshow();
+
+      function slideshow() {
+      var i;
+      var x = document.getElementsByClassName("images");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}
+      x[myIndex-1].style.display = "block";
+      setTimeout(slideshow, 5000);
+      }
+
+    </script>
 
 
     <div id="bottom_sec">
         <a href="https://m.facebook.com/Ta-Randi-508871642560125/?_rdr" target="_blank">
             <img src="./assets/images/logo-facebook-1.png" width="40" height="40" alt="" />
+        </a>
+        <a href = "http://www.tripadvisor.dk/Restaurant_Review-g230152-d2098685-Reviews-Ta_Randi_Restaurant-Mellieha_Island_of_Malta.html" target= "_blank">
+            <img src = "./assets/images/tripadvisorLogo.jpg" width="60" height="40" alt="" />
         </a>
     </div>
 
