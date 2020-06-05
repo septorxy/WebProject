@@ -5,7 +5,7 @@
 </head>
 {% if MenuSet is defined %} <div class = 'MenuSettings'><br><h1 style='text-align: center'>Menu</h1> {% endif %}
 {% for menu in menuA %}
-{% if (menu.Type != preType) %}</div> {% if MenuSet is defined %}<h2>{{ menu.Type }}</h2>{% endif %}<div class="MenuSettings grid-container" >  {% endif %}
+{% if MenuSet is defined %}{% if (menu.Type != preType) %}</div> <h2>{{ menu.Type }}</h2><div class="MenuSettings grid-container" >  {% endif %} {% elseif loop.index == 1 %} </div><div class="MenuSettings grid-container" > {% endif %}
     <div class="card grid-item">
         <div class="container_menu">
             <img src = './assets/images/{{ menu.MenuID }}.jpeg' class='centre' alt="I haven't had my picture taken yet but it will be up soon! Thank you for your patience :) ID: {{ menu.MenuID }}">
