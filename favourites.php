@@ -45,20 +45,24 @@
         $emailTo = $_POST['email'];
     
         if (!empty($emailTo)) {
-            $iterator = 1;
+            $iterator = 0;
             foreach ($data as $value){
                 $sql = "SELECT * FROM `menu` WHERE `MenuID` = $value";
                 $result = mysqli_query($conn, $sql);
                 while ($row = mysqli_fetch_assoc($result)) {
-                        $name[] = $row['Name'];
-                        $ingredients[] = $row['Ingredients'];
+                    $iterator++;
+                    $name[$iterator] = $row['Name'];
+                    $ingredients[$iterator] = $row['Ingredients'];
 
-                        $message = $message.$iterator++."<br>".$name."<br>".$ingredients."<br><br>";
+                    $message = $message.$iterator."<br>".$name[$iterator]."<br>".$ingredients[$iterator]."<br>--------------<br>";
                 }
              }
 
             $txt = 'These are your favourites from Ta Randi Restaurant: <br>'. $message;
-    
+            //echo $emailTo;
+            //echo "<br>".$subject;
+            //echo $txt."<br>";
+            
             if (mail($emailTo, $Subject, $txt)) {
                 echo 'Your Favourites have been succesfully sent!';
             } else {
