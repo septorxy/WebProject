@@ -13,6 +13,10 @@
             if($value != 0){
                 $sql = "SELECT * FROM `menu` WHERE `MenuID` = $value";
                 $result = mysqli_query($conn, $sql);
+                $row['Price'] = number_format($row['Price'], 2, '.', '');
+                if($row['Price_Potential'] != null){
+                    $row['Price_Potential'] = number_format($row['Price_Potential'], 2, '.', '');
+                }
                 while ($row = mysqli_fetch_assoc($result)) {
                     $favMenu[] = $row;
                 }
