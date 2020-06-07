@@ -1,30 +1,63 @@
 {% extends "layout.html" %} {% block content %}
 
-<head>
-    <title>Food Menu</title>
-</head>
-{% if MenuSet is defined %} <div class = 'MenuSettings'><br><h1 style='text-align: center'>Menu</h1> {% endif %}
-{% for menu in menuA %}
-{% if MenuSet is defined %}{% if (menu.Type != preType) %}</div> <h2>{{ menu.Type }}</h2><div class="MenuSettings grid-container" >  {% endif %} {% elseif loop.index == 1 %} </div><div class="MenuSettings grid-container" > {% endif %}
+<!--- Distinguish between Favourites Menu and Normal Menu using the MenuSet passed if it is the normal menu -->
+{% if MenuSet is defined %}
+
+    <head>
+        <title>Food Menu</title>
+    </head>
+
+    <div class='MenuSettings'><br>
+        <h1 style='text-align: center'>Menu</h1>
+
+{% else %} 
+
+    <head>
+        <title>Favourites</title>
+    </head>
+
+    <h1>Favourites Menu</h1>
+    <!-- Email sendning html -->
+    <form method='post'>
+        <input type='text' name='email' placeholder='Your E-mail' required=''>
+        <button type='submit' name='submit'>Send Favourites</button>
+    </form>
+
+    <div class="MenuSettings grid-container">
+    
+{% endif %}
+
+{% for item in Menu %}
+
+{% if MenuSet is defined %}{% if (item.Type != preType) %}
+<!-- Dynamic Type -->
+    </div> <h2>{{ item.Type }}</h2>
+    <!-- New grid created for every type -->
+    <div class="MenuSettings grid-container"> {% endif %} {% endif %}
     <div class="card grid-item">
         <div class="container_menu">
-            <img src = './assets/images/{{ menu.MenuID }}.jpeg' class='centre' alt="I haven't had my picture taken yet but it will be up soon! Thank you for your patience :) ID: {{ menu.MenuID }}">
-            <h4><b>{{ menu.Name }}  </b></h4>
+            <!-- Image being pulled using the MenuID -->
+            <img src='./assets/images/{{ item.MenuID }}.jpeg' class='centre'
+                alt="I haven't had my picture taken yet but it will be up soon! Thank you for your patience :) ID: {{ menu.MenuID }}">
+            <h4><b>{{ item.Name }} </b></h4>
             <p>
-                <table>
-                    <tr>
-                        <td>{% if menu.Price_Potential != null %}Small Portion{% endif %}</td>
-                        <td>{% if menu.Price_Potential != null %}| Large Portion{% endif %}</td>
-                    </tr>
-                    <tr>
-                        <td>€{{ menu.Price }}</td>
-                        <td>{% if menu.Price_Potential != null %}| €{{ menu.Price_Potential }} {% endif %}</td>
-                    </tr>
-                </table>
-                <br>
-                <a class="detailsMore" href="details.php?a={{ menu.MenuID }}">More Info</a>
+            <table>
+                <tr>
+                    <!-- Price_Potential is used to show that a small/large portion is available as opposed to just a normal portion-->
+                    <td>{% if item.Price_Potential != null %}Small Portion{% endif %}</td>
+                    <td>{% if item.Price_Potential != null %}| Large Portion{% endif %}</td>
+                </tr>
+                <tr>
+                    <td>€{{ item.Price }}</td>
+                    <td>{% if item.Price_Potential != null %}| €{{ item.Price_Potential }} {% endif %}</td>
+                </tr>
+            </table>
+            <br>
+            <!-- Link to send user to details page-->
+            <a class="detailsMore" href="details.php?a={{ item.MenuID }}">More Info</a>
             </p>
         </div>
-    </div> {% set preType = menu.Type %}
- {% endfor %}
-</div> {% endblock %}
+    </div> <!-- Variable set to detect change in type --> {% set preType = item.Type %}
+    {% endfor %}
+</div> 
+{% endblock %}

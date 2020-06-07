@@ -1,10 +1,11 @@
 {% extends "layout.html" %} {% block content %} {% for menu in menuA %}
 <img src = './assets/images/{{ menu.MenuID }}.jpeg' class='centre' alt="I haven't had my picture taken yet but it will be up soon! Thank you for your patience :) ID: {{ menu.MenuID }}">
 <div class='detailsPage' style="text-align:center">
-    
+    <!-- Display -->
     <h2>{{menu.Name}}</h2>
     <h3>{{menu.Type}}</h3>
     {% if menu.Price_Potential > 0 %}
+    <!-- split left and right for cleaner display -->
     <div class="split left">
         <div class="centered">
             <p>Small Portion<br></p>
@@ -25,10 +26,12 @@
     {% endif %} {{menu.Ingredients}}  {% endfor %}
 
     <p>
+        <!-- To add to favourites -->
     <form  method="post">
         <button type='submit' name='submit'>{{ value }} Favourites</button>
     </form>
     <br><br>
+    <!-- To go back to prev page -->
     <button onclick="javascript:history.go(-1)">Back</button>
     </p>
 </div>{% endblock %}
