@@ -1,5 +1,6 @@
 <?php
 error_reporting(0);
+//Header, Footer and DB connection loaded
 require_once __DIR__ . '/bootstrap.php';
 require_once __DIR__ . '/footer.php';
 require_once __DIR__ . '/header.php';
@@ -13,6 +14,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT *  FROM `menu` WHERE `MenuID` = ? ORDE
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     while ($row = mysqli_fetch_assoc($result)){
+        //Rounding to 2 decimal places for a cleaner look
         $row['Price'] = number_format($row['Price'], 2, '.', '');
         if($row['Price_Potential'] != null){
             $row['Price_Potential'] = number_format($row['Price_Potential'], 2, '.', '');

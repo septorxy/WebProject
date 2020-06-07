@@ -1,5 +1,6 @@
 <?php
     error_reporting(0);
+    //Header, Footer and DB connection loaded
     require_once __DIR__ . '/header.php';
     require_once __DIR__ . '/footer.php';
     require_once __DIR__ . '/includes/dbhINC.php';
@@ -11,32 +12,31 @@
         if(sizeof($data) > 1){
         foreach ($data as $value){
             if($value != 0){
+                //Queries being sent for each menuID in the cookie
                 $sql = "SELECT * FROM `menu` WHERE `MenuID` = $value";
                 $result = mysqli_query($conn, $sql);
-                $row['Price'] = number_format($row['Price'], 2, '.', '');
-                if($row['Price_Potential'] != null){
-                    $row['Price_Potential'] = number_format($row['Price_Potential'], 2, '.', '');
-                }
+               
                 while ($row = mysqli_fetch_assoc($result)) {
+                    //Changing prices to show to 2 decimal places
+                    $row['Price'] = number_format($row['Price'], 2, '.', '');
+                    if($row['Price_Potential'] != null){
+                        $row['Price_Potential'] = number_format($row['Price_Potential'], 2, '.', '');
+                    }
+                    //Loading into an array
                     $favMenu[] = $row;
                 }
             }
         }
-        
-        //Display
-        echo "<h1>Favourites Menu</h1>";
-        echo "<form  method='post'>
-        <input type='text' name='email' placeholder='Your E-mail' required=''>
-        <button type='submit' name='submit'>Send Favourites</button>
-        </form>";
-        echo $twig->render('Menu.html', array('menuA' => $favMenu));
-        echo "<title>Favourites</title>";
+        //Rendering the page with the menu items
+        echo $twig->render('Menu.html', array('Menu' => $favMenu));
     }else{
+        //Case none found
         echo $twig->render('layout.html');
         echo "<title>Favourites</title>";
         echo "<div id='middle_sec'>You have not selected any favourites yet! Go to our Menu to add some :)</div>";
     }
     }else{
+        //Case none found
         echo $twig->render('layout.html');
         echo "<title>Favourites</title>";
         echo "<div id='middle_sec'>You have not selected any favourites yet! Go to our Menu to add some :)</div>";
@@ -63,9 +63,6 @@
              }
 
             $txt = 'These are your favourites from Ta Randi Restaurant: <br>'. $message;
-            //echo $emailTo;
-            //echo "<br>".$subject;
-            //echo $txt."<br>";
             
             if (mail($emailTo, $Subject, $txt)) {
                 echo 'Your Favourites have been succesfully sent!';
