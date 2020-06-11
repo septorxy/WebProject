@@ -62,7 +62,6 @@ html {
 /* Cards used for Menu adapted from Pet Adoption Site by Dr Chris Porter */
 
 .card {
-    padding-left: 100px;
     box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.8);
     transition: 2s;
     width: 400px;
