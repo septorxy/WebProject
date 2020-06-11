@@ -1,7 +1,8 @@
 <?php
-//error_reporting(0);
-require_once __DIR__ . '/header.php';
-require_once __DIR__ . '/footer.php';
+error_reporting(0);
+require_once __DIR__ . '/bootstrap.php';
+require_once 'header.php';
+require_once 'footer.php';
 echo !empty($msgClass)?$msgClass:'';
 
 $statusMsg = '';
@@ -16,7 +17,7 @@ if (isset($_POST['submit'])) {
     if (!empty($emailFrom) && !empty($name) && !empty($subject) && !empty($message)) {
         //email headers with the sender's information
         $emailTo = 'tarandirestaurant1@gmail.com';
-        $Subject = 'From: ' . $emailFrom . 'Subject: ' . $subject;
+        $Subject = 'From: ' . $emailFrom . ' Subject: ' . $subject;
         $txt = "You have received an e-mail \n\n" . $message;
 
         // Additional headers

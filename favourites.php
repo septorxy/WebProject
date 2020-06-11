@@ -58,17 +58,17 @@
                     $name[$iterator] = $row['Name'];
                     $ingredients[$iterator] = $row['Ingredients'];
 
-                    $message = $message.$iterator."<br>".$name[$iterator]."<br>".$ingredients[$iterator]."<br>--------------<br>";
+                    $message = $message.$iterator." ".$name[$iterator]."\n".$ingredients[$iterator]."\n--------------\n";
                 }
              }
 
-            $txt = 'These are your favourites from Ta Randi Restaurant: <br>'. $message;
+            $txt = "These are your favourites from Ta Randi Restaurant: \n". $message;
 
             $emailFrom = 'tarandirestaurant1@gmail.com';
             
             $headers = 'From: ' . $emailFrom;
             
-            if (mail($emailTo, $Subject, $txt, $headers)) {
+            if (mail($emailTo, $subject, $txt, $headers)) {
                 echo 'Your Favourites have been succesfully sent!';
             } else {
                 echo 'Something went wrong, please try again.';
