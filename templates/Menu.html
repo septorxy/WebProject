@@ -18,10 +18,15 @@
 
     <h1>Favourites Menu</h1>
     <!-- Email sendning html -->
+
     <form method='post'>
-        <input type='text' name='email' placeholder='Your E-mail' required=''>
+        <input type='text' name="email" placeholder='Your E-mail' required=''>
         <button type='submit' name='submit'>Send Favourites</button>
     </form>
+    
+    {% if status is defined %}
+        <p> {{ status }}</p>
+    {% endif %}
 
     <div class="MenuSettings grid-container">
     
