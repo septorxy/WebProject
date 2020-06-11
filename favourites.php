@@ -27,55 +27,53 @@
                 }
             }
         }
-        //Rendering the page with the menu items
-        echo $twig->render('Menu.html', array('Menu' => $favMenu));
-    }else{
-        //Case none found
-        echo $twig->render('layout.html');
-        echo "<title>Favourites</title>";
-        echo "<div id='middle_sec'>You have not selected any favourites yet! Go to our Menu to add some :)</div>";
-    }
-    }else{
-        //Case none found
-        echo $twig->render('layout.html');
-        echo "<title>Favourites</title>";
-        echo "<div id='middle_sec'>You have not selected any favourites yet! Go to our Menu to add some :)</div>";
-    }
-
-
-
-    if (isset($_POST['submit'])) {
-        $subject = 'Your Favourites';
-        $emailTo = $_POST['email'];
+        if (isset($_POST['submit'])) {
+            $subject = 'Your Favourites';
+            $emailTo = $_POST['email'];
+        
+            if (!empty($emailTo)) {
+                $iterator = 0;
+                foreach ($data as $value){
+                    $sql = "SELECT * FROM `menu` WHERE `MenuID` = $value";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $iterator++;
+                        $name[$iterator] = $row['Name'];
+                        $ingredients[$iterator] = $row['Ingredients'];
     
-        if (!empty($emailTo)) {
-            $iterator = 0;
-            foreach ($data as $value){
-                $sql = "SELECT * FROM `menu` WHERE `MenuID` = $value";
-                $result = mysqli_query($conn, $sql);
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $iterator++;
-                    $name[$iterator] = $row['Name'];
-                    $ingredients[$iterator] = $row['Ingredients'];
-
-                    $message = $message.$iterator." ".$name[$iterator]."\n".$ingredients[$iterator]."\n--------------\n";
+                        $message = $message.$iterator." ".$name[$iterator]."\n".$ingredients[$iterator]."\n--------------\n";
+                    }
+                 }
+    
+                $txt = "These are your favourites from Ta Randi Restaurant: \n". $message;
+    
+                $emailFrom = 'tarandirestaurant1@gmail.com';
+                
+                $headers = 'From: ' . $emailFrom;
+                
+                if (mail($emailTo, $subject, $txt, $headers)) {
+                    $status = 'Your Favourites have been succesfully sent!';
+                } else {
+                    $status = 'Something went wrong, please try again.';
                 }
-             }
-
-            $txt = "These are your favourites from Ta Randi Restaurant: \n". $message;
-
-            $emailFrom = 'tarandirestaurant1@gmail.com';
-            
-            $headers = 'From: ' . $emailFrom;
-            
-            if (mail($emailTo, $subject, $txt, $headers)) {
-                echo 'Your Favourites have been succesfully sent!';
+    
             } else {
-                echo 'Something went wrong, please try again.';
+                echo 'Please fill all the fields.';
             }
-
-        } else {
-            echo 'Please fill all the fields.';
         }
+        //Rendering the page with the menu items
+        echo $twig->render('Menu.html', ['Menu' => $favMenu, 'status' => $status]);
+    }else{
+        //Case none found
+        echo $twig->render('layout.html');
+        echo "<title>Favourites</title>";
+        echo "<div id='middle_sec'>You have not selected any favourites yet! Go to our Menu to add some :)</div>";
     }
+    }else{
+        //Case none found
+        echo $twig->render('layout.html');
+        echo "<title>Favourites</title>";
+        echo "<div id='middle_sec'>You have not selected any favourites yet! Go to our Menu to add some :)</div>";
+    }
+
 ?>  
