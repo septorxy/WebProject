@@ -1,248 +1,32 @@
 @charset "UTF-8";
+/* Home Page CSS */
+
+.slideshow {
+    max-width: 750px;
+    max-height: 500px;
+}
+
+/* ----------------- */
+
+/* Contact Form CSS */
+
+input {
+    width: 50%;
+}
+
+textarea {
+    width: 50%;
+}
+
+/* ------------------ */
+
+/* In general */
+
 body {
     font-family: open Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
     font-size: 20px;
     font-weight: normal;
     display: block;
-}
-
-.card {
-    box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.8);
-    transition: 2s;
-    width: 400px;
-    border-radius: 15px;
-    background-image: url('../images/Background.jpeg') !important;
-}
-
-    @media only screen and (max-width: 1100px){
-        .card {
-            box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.8);
-            transition: 2s;
-            width: 100%;
-            /* You can also specify min/max widths */
-            min-width: 130px;
-            max-width: 400px;
-            border-radius: 15px;
-            background-image: url('../images/Background.jpeg') !important;
-        }
-    
-        .MenuSettings {
-            padding: 00px;
-            font-style: oblique;
-        }
-    
-        .slideshow{
-            width: 100%;
-            height: 100%;
-            max-width: 750px;
-            max-height: 500px;
-        }
-
-
-        li a {
-            text-align: left !important;
-            text-decoration: none;
-          }
-
-
-          a:link {
-            color: black;
-            padding: 20px !important;
-        }
-    }
-
-
-    @media only screen and (max-width: 600px) {
-    .slideshow {
-        width: 100%;
-        height: 100%;
-        max-width: 350px!important;
-        max-height: 200px!important;
-    }
-
-    #bottom_sec-image{
-        width:25%;
-    }
-
-
-    table{
-        font-size: smaller;
-    }
-
-    .grid-container-header{
-        grid-template-columns: auto !important;
-    }
-    
-    .card {
-        box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.8);
-        transition: 2s;
-        width: 100%;
-        /* You can also specify min/max widths */
-        min-width: 115px;
-        max-width: 115px;
-        border-radius: 15px;
-        background-image: url('../images/Background.jpeg') !important;
-    }
-
-    .MenuSettings {
-        padding: 0px !important;
-        font-style: oblique;
-        font-size: 4.5vw !important;
-    }
-
-    .slideshow{
-        width: 100%;
-        height: 100%;
-        max-width: 750px;
-        max-height: 500px;
-    }
-
-    html{
-        widows: 5px;
-        border: 0px solid #E8DCD1;
-        background:#E8DCD1;
-    
-        /*
-                https://www.loriswebs.com/css-border-webpage.html
-                https://bytes.com/topic/html-css/answers/591132-i-need-border-around-entire-page
-        */
-     }
-     
-
-     img{
-        width: 41.66%;
-        position: center;
-    }
-
-    .grid-container {
-        display: grid;
-        grid-template-columns: auto auto !important;
-        grid-gap: 10px;
-    }
-
-    .MenuSettings{
-        padding: 0px;
-    }
-
-    .middle_sec {
-        padding-left: 0px;
-    }
-
-    
-
-  }
-
-.split {
-    height: 20%;
-    width: 90%;
-    position: absolute;
-    z-index: 20;
-    overflow-x: auto;
-}
-/* Control the left side */
-
-.left {
-    left: 0;
-}
-/* Control the right side */
-
-.right {
-    right: 0;
-}
-/* If you want the content centered horizontally and vertically */
-
-
-img{
-    max-width: 250px;
-    max-height: 150px;
-    position: center;
-}
-
-.logo{
-    max-width: 250px;
-    max-height: 100px;
-    border-radius: 50%;
-    margin-top: -6px;
-    position: relative;
-}
-
-.slideshow{
-    max-width: 750px;
-    max-height: 500px;
-}
-
-.centre {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
-.MenuSettings {
-    padding: 40px;
-    font-style: oblique;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-/*controlling the overall background and border*/
-html{
-    widows: auto;
-    border:30px solid #2B1400;
-    background:#E8DCD1;
-
-    /*
-            https://www.loriswebs.com/css-border-webpage.html
-            https://bytes.com/topic/html-css/answers/591132-i-need-border-around-entire-page
-    */
- }
-
-.container_menu {
-    padding: 2px 16px;
-}
-
-input {
-    width: 50%;
-  }
-
-textarea{
-    width: 50%;
-}
-
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-}
-
-
-.grid-item {
-     border: 1px solid rgba(0, 0, 0, 0.8);
-     padding: 10px;
-}
-
-#container {
-    width: auto;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#top_right {
-    float: left;
-    height: 70px;
-    font-size: 17.5px;
-    padding-left: 0px;
-    padding-top: 40px;
 }
 
 .middle_sec {
@@ -256,16 +40,142 @@ textarea{
 .bottom_sec {
     height: auto;
     float: left;
-   
+    width: 100%
 }
 
-a {
-    text-decoration: none;
+/*controlling the overall background and border*/
+
+html {
+    widows: auto;
+    border: 30px solid #2B1400;
+    background: #E8DCD1;
+    /*
+            https://www.loriswebs.com/css-border-webpage.html
+            https://bytes.com/topic/html-css/answers/591132-i-need-border-around-entire-page
+    */
+}
+
+/* ----------------- */
+
+/* Menu, Details & Favourites CSS */
+
+/* Cards used for Menu adapted from Pet Adoption Site by Dr Chris Porter */
+
+.card {
+    box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.8);
+    transition: 2s;
+    width: 400px;
+    border-radius: 15px;
+    background-image: url('../images/Background.jpeg') !important;
+}
+
+img {
+    max-width: 250px;
+    max-height: 150px;
+    position: center;
+}
+
+.centre {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.MenuSettings {
+    padding: 40px;
+    font-style: oblique;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container_menu {
+    padding: 2px 16px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.split {
+    height: 20%;
+    width: 90%;
+    position: absolute;
+    z-index: 20;
+    overflow-x: auto;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+}
+
+.grid-item {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
 }
 
 .detailsMore {
     padding: 0px !important;
     float: right !important;
+}
+
+/* ---------------- */
+
+/* Header and footer CSS */
+
+.footer {
+    border-top: black;
+    background-color: blanchedalmond;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.logo {
+    max-width: 250px;
+    max-height: 100px;
+    border-radius: 50%;
+    margin-top: -6px;
+    position: relative;
+}
+
+.grid-container-header {
+    width: 35%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 5px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    text-align: center;
+    text-decoration: none;
 }
 
 a:link {
@@ -286,34 +196,87 @@ a:active {
     color: rgba(57, 57, 57, 1.00);
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    text-align: center;
+a {
     text-decoration: none;
-  }
+}
 
-  .footer {
-    border-top: black;
-    background-color: blanchedalmond;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
+/* --------------------- */
 
+/* Responsivness CSS */
 
-  .grid-container-header{
-        width: 55%;
-        display: grid;
-        grid-template-columns: auto auto auto auto auto;
-        grid-gap: 5px;
-  }
+@media only screen and (max-width: 1100px) {
+    .card {
+        width: 100%;
+        /* You can also specify min/max widths */
+        min-width: 130px;
+        max-width: 400px;
+    }
+    .MenuSettings {
+        padding: 00px;
+        font-style: oblique;
+    }
+    .slideshow {
+        max-width: 750px;
+        max-height: 500px;
+    }
+    li a {
+        text-align: left !important;
+    }
+    a:link {
+        padding: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .slideshow {
+        max-width: 450px!important;
+        max-height: 200px!important;
+    }
+    #bottom_sec-image {
+        width: 25%;
+    }
+    .bottom_sec {
+        width: 35% !important;
+    }
+    table {
+        font-size: smaller;
+    }
+    .grid-container-header {
+        grid-template-columns: auto !important;
+    }
+    .card {
+        width: 75%;
+        min-width: 115px;
+        max-width: 200px;
+    }
+    .MenuSettings {
+        padding: 0px !important;
+        font-size: 4.5vw !important;
+    }
+    .slideshow {
+        width: 100%;
+        height: 100%;
+        max-width: 750px;
+        max-height: 500px;
+    }
+    html {
+        widows: 5px;
+        border: 0px solid #E8DCD1;
+    }
+    img {
+        width: 41.66%;
+        position: center;
+    }
+    .grid-container {
+        grid-template-columns: auto auto !important;
+        grid-gap: 10px;
+    }
+    .MenuSettings {
+        padding: 0px;
+    }
+    .middle_sec {
+        padding-left: 0px;
+    }
+}
+
+/* --------------------- */
