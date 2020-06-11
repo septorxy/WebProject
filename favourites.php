@@ -63,8 +63,12 @@
              }
 
             $txt = 'These are your favourites from Ta Randi Restaurant: <br>'. $message;
+
+            $emailFrom = 'tarandirestaurant1@gmail.com';
             
-            if (mail($emailTo, $Subject, $txt)) {
+            $headers = 'From: ' . $emailFrom;
+            
+            if (mail($emailTo, $Subject, $txt, $headers)) {
                 echo 'Your Favourites have been succesfully sent!';
             } else {
                 echo 'Something went wrong, please try again.';
